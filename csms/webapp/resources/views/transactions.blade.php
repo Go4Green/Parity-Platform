@@ -9,7 +9,7 @@
       </v-flex>
 
       <v-flex xs12>
-        <transactions></transactions>
+        <transactions :transactions="{{ $transactions }}"></transactions>
       </v-flex>
     </v-layout>
   </v-container>

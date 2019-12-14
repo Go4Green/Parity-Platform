@@ -15,7 +15,11 @@ class TransactionController extends Controller
      */
     public function index()
     {
-        return view('transactions');
+        $transactions = Transaction::where('user_id', Auth::user()->id)->get();
+        
+        return view('transactions', [
+            'transactions' => $transactions
+        ]);
     }
 
     /**
@@ -38,7 +42,7 @@ class TransactionController extends Controller
     {
         $tx = Transaction::create([
             'user_id' => 1,
-            'charging_station_id' => $request->charging_station_id,
+            'charging_station_id' => $request->input('charging_station_id'),
             'charge_start' => now(), 
             'charge_end' => now(), 
         ]);
