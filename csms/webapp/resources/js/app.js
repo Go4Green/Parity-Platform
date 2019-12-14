@@ -20,6 +20,7 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 Vue.component('app', require('./components/App.vue').default);
 Vue.component('dashboard', require('./components/Dashboard.vue').default);
+Vue.component('transaction-form', require('./components/TransactionForm.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
