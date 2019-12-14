@@ -3,12 +3,16 @@ import websockets
 import RPi.GPIO as GPIO
 import time
 
+from datetime import datetime
 from ocpp.v20 import call
 from ocpp.v20 import ChargePoint as cp
 
 GPIO.setmode(GPIO.BCM)
 start_button = 16
 GPIO.setup(start_button, GPIO.IN, pull_up_down=GPIO.PUD_UP)#Button to GPIOstart_button
+
+stop_button = 26
+GPIO.setup(stop_button, GPIO.IN, pull_up_down=GPIO.PUD_UP)#Button to GPIOstop_button
 
 class ChargePoint(cp):
 
@@ -26,6 +30,19 @@ class ChargePoint(cp):
             print("Connected to central system.")
             print(request)
             print(response)
+
+        try:
+            while True:
+                button_state = GPIO.input(stop_button)
+                if button_state == False:
+                    # GPIO.output(26, True)
+                    print('Stoped Charging..')
+                    now = datetime.now()
+                    current_time = now.strftime("%H:%M:%S")
+                    print("Stop Time =", current_time)
+                    time.sleep(0.2)
+        except:
+            GPIO.cleanup()
 
 
 async def main():
