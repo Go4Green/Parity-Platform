@@ -15,6 +15,8 @@ class CreateWalletsTable extends Migration
     {
         Schema::create('wallets', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->float('balance', 14, 3)->nullable();
+            $table->enum('currency', ['EUR', 'USD', 'GBP'])->default('EUR');
             $table->timestamps();
         });
     }

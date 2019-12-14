@@ -9,7 +9,7 @@
       </v-flex>
 
       <v-flex xs12>
-        <dashboard></dashboard>
+        <wallet></wallet>
       </v-flex>
     </v-layout>
   </v-container>

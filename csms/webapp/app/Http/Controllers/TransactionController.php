@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Transaction;
 use Illuminate\Http\Request;
+use Auth;
 
 class TransactionController extends Controller
 {
@@ -24,7 +25,7 @@ class TransactionController extends Controller
      */
     public function create()
     {
-        //
+        // 
     }
 
     /**
@@ -35,7 +36,14 @@ class TransactionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $tx = Transaction::create([
+            'user_id' => 1,
+            'charging_station_id' => $request->charging_station_id,
+            'charge_start' => now(), 
+            'charge_end' => now(), 
+        ]);
+
+        return $tx;
     }
 
     /**
