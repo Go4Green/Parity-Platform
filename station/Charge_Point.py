@@ -1,9 +1,14 @@
 import asyncio
 import websockets
+import RPi.GPIO as GPIO
+import time
 
 from ocpp.v20 import call
 from ocpp.v20 import ChargePoint as cp
 
+GPIO.setmode(GPIO.BCM)
+
+GPIO.setup(16, GPIO.IN, pull_up_down=GPIO.PUD_UP)#Button to GPIO16
 
 class ChargePoint(cp):
 
@@ -35,4 +40,17 @@ async def main():
 
 
 if __name__ == '__main__':
-    asyncio.run(main())
+    print("Press start")
+    try:
+        while True:
+            button_state = GPIO.input(16)
+            if button_state == False:
+                #  GPIO.output(26, True)
+                print('Charging...')
+                asyncio.run(main())
+                time.sleep(0.2)
+    except:
+        GPIO.cleanup()
+
+
+    
