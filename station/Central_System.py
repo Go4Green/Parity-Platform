@@ -22,13 +22,13 @@ async def on_connect(websocket, path):
     """
     charge_point_id = path.strip('/')
     cp = ChargePoint(charge_point_id, websocket)
-    print(dir(cp)) # print cp attriibutes
-    print(cp.id)  # print Charge Point ID
-    print(cp.call)
-    print(cp.start)
-    print(cp.route_map)
-    print(cp.route_message)
-    print(cp.on_boot_notification)
+    # print(dir(cp)) # print cp attriibutes
+    print("Connection with:",cp.id)  # print Charge Point ID
+    # print(cp.call)
+    # print(cp.start)
+    # print(cp.route_map)
+    # print(cp.route_message)
+    # print(cp.on_boot_notification)
 
 
 
