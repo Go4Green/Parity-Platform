@@ -1,7 +1,6 @@
 <template>
   <v-card>
     <v-card-title>
-      Nutrition
       <v-spacer></v-spacer>
       <v-text-field
         v-model="search"
@@ -32,7 +31,7 @@ export default {
 				{ text: 'TX ID', value: 'id' },
 				{ text: 'Station ID', value: 'charging_station_id' },
 				{ text: 'Charge Start', value: 'charge_start' },
-				{ text: 'Charge End', value: 'charge_end' }
+				// { text: 'Charge End', value: 'charge_end' }
 			],
 		}
 	},
