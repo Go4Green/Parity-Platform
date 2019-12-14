@@ -500,7 +500,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     transactions: Array
@@ -517,10 +516,8 @@ __webpack_require__.r(__webpack_exports__);
       }, {
         text: 'Charge Start',
         value: 'charge_start'
-      }, {
-        text: 'Charge End',
-        value: 'charge_end'
-      }]
+      } // { text: 'Charge End', value: 'charge_end' }
+      ]
     };
   }
 });
@@ -36259,7 +36256,6 @@ var render = function() {
       _c(
         "v-card-title",
         [
-          _vm._v("\n    Nutrition\n    "),
           _c("v-spacer"),
           _vm._v(" "),
           _c("v-text-field", {
