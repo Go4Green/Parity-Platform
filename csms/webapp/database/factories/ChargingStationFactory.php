@@ -7,6 +7,8 @@ use Faker\Generator as Faker;
 
 $factory->define(ChargingStation::class, function (Faker $faker) {
     return [
-        //
+        'name' => "",
+        'ip_address' => "",
+        'location' => "",
     ];
 });

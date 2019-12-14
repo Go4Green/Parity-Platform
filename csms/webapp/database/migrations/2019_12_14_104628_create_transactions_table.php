@@ -15,6 +15,10 @@ class CreateTransactionsTable extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('user_id');
+            $table->bigInteger('charging_station_id');
+            $table->datetime('charge_start');
+            $table->datetime('charge_end');
             $table->timestamps();
         });
     }
