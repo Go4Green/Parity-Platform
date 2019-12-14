@@ -18,3 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('wallet', 'WalletController');
+
+Route::resource('transactions', 'TransactionController');
+
+Route::resource('charging-stations', 'ChargingStationController');
