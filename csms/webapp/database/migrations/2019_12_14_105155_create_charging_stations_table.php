@@ -15,6 +15,7 @@ class CreateChargingStationsTable extends Migration
     {
         Schema::create('charging_stations', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('ip_address');
             $table->timestamps();
         });
     }
