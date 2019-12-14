@@ -2,6 +2,7 @@ import asyncio
 import websockets
 import RPi.GPIO as GPIO
 import time
+import requests
 
 from datetime import datetime
 from ocpp.v20 import call
@@ -46,6 +47,14 @@ class ChargePoint(cp):
 
 
 async def main():
+    url = "http://172.16.176.206:8000/transactions"
+    payload = "{\n\t\"charging_station_id\": 1\n}"
+    headers = {
+        'Content-Type': "application/json"
+    }
+    response = requests.request("POST", url, data=payload, headers=headers)
+    print(response.text)
+    
     async with websockets.connect(
         'ws://localhost:9000/CP_1',
          subprotocols=['ocpp2.0']
