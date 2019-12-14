@@ -9,7 +9,7 @@
       </v-flex>
 
       <v-flex xs12>
-        <transaction-form></transaction-form>
+        <transactions></transactions>
       </v-flex>
     </v-layout>
   </v-container>

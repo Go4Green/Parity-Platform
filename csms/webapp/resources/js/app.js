@@ -28,7 +28,7 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 Vue.component('app', require('./components/App.vue').default);
 Vue.component('dashboard', require('./components/Dashboard.vue').default);
-Vue.component('transaction-form', require('./components/TransactionForm.vue').default);
+Vue.component('transactions', require('./components/Transactions.vue').default);
 Vue.component('google-map', require('./components/GoogleMap.vue').default);
 Vue.component('charging-station', require('./components/ChargingStation.vue').default);
 Vue.component('wallet', require('./components/Wallet.vue').default);

@@ -471,10 +471,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/TransactionForm.vue?vue&type=script&lang=js&":
-/*!**************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/TransactionForm.vue?vue&type=script&lang=js& ***!
-  \**************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Transactions.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Transactions.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -501,88 +501,27 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    transactions: Array
+  },
   data: function data() {
     return {
-      valid: true,
-      name: '',
-      nameRules: [function (v) {
-        return !!v || 'Name is required';
-      }, function (v) {
-        return v && v.length <= 10 || 'Name must be less than 10 characters';
-      }],
-      email: '',
-      emailRules: [function (v) {
-        return !!v || 'E-mail is required';
-      }, function (v) {
-        return /.+@.+\..+/.test(v) || 'E-mail must be valid';
-      }],
-      select: null,
-      items: ['Item 1', 'Item 2', 'Item 3', 'Item 4'],
-      checkbox: false
+      search: '',
+      headers: [{
+        text: 'TX ID',
+        value: 'id'
+      }, {
+        text: 'Station ID',
+        value: 'charging_station_id'
+      }, {
+        text: 'Charge Start',
+        value: 'charge_start'
+      }, {
+        text: 'Charge End',
+        value: 'charge_end'
+      }]
     };
-  },
-  methods: {
-    validate: function validate() {
-      if (this.$refs.form.validate()) {
-        this.snackbar = true;
-      }
-    },
-    reset: function reset() {
-      this.$refs.form.reset();
-    },
-    resetValidation: function resetValidation() {
-      this.$refs.form.resetValidation();
-    }
   }
 });
 
@@ -36299,10 +36238,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/TransactionForm.vue?vue&type=template&id=65919027&":
-/*!******************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/TransactionForm.vue?vue&type=template&id=65919027& ***!
-  \******************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Transactions.vue?vue&type=template&id=eba36a80&":
+/*!***************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Transactions.vue?vue&type=template&id=eba36a80& ***!
+  \***************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -36315,144 +36254,40 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "v-container",
-    { attrs: { "grid-list-md": "" } },
+    "v-card",
     [
       _c(
-        "v-card",
+        "v-card-title",
         [
-          _c(
-            "v-layout",
-            { attrs: { wrap: "", "justify-space-around": "" } },
-            [
-              _c(
-                "v-flex",
-                { attrs: { xs12: "" } },
-                [
-                  _c(
-                    "v-form",
-                    {
-                      ref: "form",
-                      attrs: { "lazy-validation": "" },
-                      model: {
-                        value: _vm.valid,
-                        callback: function($$v) {
-                          _vm.valid = $$v
-                        },
-                        expression: "valid"
-                      }
-                    },
-                    [
-                      _c("v-text-field", {
-                        attrs: {
-                          counter: 10,
-                          rules: _vm.nameRules,
-                          label: "Name",
-                          required: ""
-                        },
-                        model: {
-                          value: _vm.name,
-                          callback: function($$v) {
-                            _vm.name = $$v
-                          },
-                          expression: "name"
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("v-text-field", {
-                        attrs: {
-                          rules: _vm.emailRules,
-                          label: "E-mail",
-                          required: ""
-                        },
-                        model: {
-                          value: _vm.email,
-                          callback: function($$v) {
-                            _vm.email = $$v
-                          },
-                          expression: "email"
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("v-select", {
-                        attrs: {
-                          items: _vm.items,
-                          rules: [
-                            function(v) {
-                              return !!v || "Item is required"
-                            }
-                          ],
-                          label: "Item",
-                          required: ""
-                        },
-                        model: {
-                          value: _vm.select,
-                          callback: function($$v) {
-                            _vm.select = $$v
-                          },
-                          expression: "select"
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("v-checkbox", {
-                        attrs: {
-                          rules: [
-                            function(v) {
-                              return !!v || "You must agree to continue!"
-                            }
-                          ],
-                          label: "Do you agree?",
-                          required: ""
-                        },
-                        model: {
-                          value: _vm.checkbox,
-                          callback: function($$v) {
-                            _vm.checkbox = $$v
-                          },
-                          expression: "checkbox"
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c(
-                        "v-btn",
-                        {
-                          staticClass: "mr-4",
-                          attrs: { disabled: !_vm.valid, color: "success" },
-                          on: { click: _vm.validate }
-                        },
-                        [_vm._v("\n\t\t\t\t\t\tValidate\n\t\t\t\t\t")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-btn",
-                        {
-                          staticClass: "mr-4",
-                          attrs: { color: "error" },
-                          on: { click: _vm.reset }
-                        },
-                        [_vm._v("\n\t\t\t\t\t\tReset Form\n\t\t\t\t\t")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-btn",
-                        {
-                          attrs: { color: "warning" },
-                          on: { click: _vm.resetValidation }
-                        },
-                        [_vm._v("\n\t\t\t\t\t\tReset Validation\n\t\t\t\t\t")]
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          )
+          _vm._v("\n    Nutrition\n    "),
+          _c("v-spacer"),
+          _vm._v(" "),
+          _c("v-text-field", {
+            attrs: {
+              "append-icon": "search",
+              label: "Search",
+              "single-line": "",
+              "hide-details": ""
+            },
+            model: {
+              value: _vm.search,
+              callback: function($$v) {
+                _vm.search = $$v
+              },
+              expression: "search"
+            }
+          })
         ],
         1
-      )
+      ),
+      _vm._v(" "),
+      _c("v-data-table", {
+        attrs: {
+          headers: _vm.headers,
+          items: _vm.transactions,
+          search: _vm.search
+        }
+      })
     ],
     1
   )
@@ -89033,7 +88868,7 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('app', __webpack_require__(/*! ./components/App.vue */ "./resources/js/components/App.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('dashboard', __webpack_require__(/*! ./components/Dashboard.vue */ "./resources/js/components/Dashboard.vue")["default"]);
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('transaction-form', __webpack_require__(/*! ./components/TransactionForm.vue */ "./resources/js/components/TransactionForm.vue")["default"]);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('transactions', __webpack_require__(/*! ./components/Transactions.vue */ "./resources/js/components/Transactions.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('google-map', __webpack_require__(/*! ./components/GoogleMap.vue */ "./resources/js/components/GoogleMap.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('charging-station', __webpack_require__(/*! ./components/ChargingStation.vue */ "./resources/js/components/ChargingStation.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('wallet', __webpack_require__(/*! ./components/Wallet.vue */ "./resources/js/components/Wallet.vue")["default"]);
@@ -89326,17 +89161,17 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/TransactionForm.vue":
-/*!*****************************************************!*\
-  !*** ./resources/js/components/TransactionForm.vue ***!
-  \*****************************************************/
+/***/ "./resources/js/components/Transactions.vue":
+/*!**************************************************!*\
+  !*** ./resources/js/components/Transactions.vue ***!
+  \**************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _TransactionForm_vue_vue_type_template_id_65919027___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TransactionForm.vue?vue&type=template&id=65919027& */ "./resources/js/components/TransactionForm.vue?vue&type=template&id=65919027&");
-/* harmony import */ var _TransactionForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TransactionForm.vue?vue&type=script&lang=js& */ "./resources/js/components/TransactionForm.vue?vue&type=script&lang=js&");
+/* harmony import */ var _Transactions_vue_vue_type_template_id_eba36a80___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Transactions.vue?vue&type=template&id=eba36a80& */ "./resources/js/components/Transactions.vue?vue&type=template&id=eba36a80&");
+/* harmony import */ var _Transactions_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Transactions.vue?vue&type=script&lang=js& */ "./resources/js/components/Transactions.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -89346,9 +89181,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _TransactionForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _TransactionForm_vue_vue_type_template_id_65919027___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _TransactionForm_vue_vue_type_template_id_65919027___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _Transactions_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Transactions_vue_vue_type_template_id_eba36a80___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Transactions_vue_vue_type_template_id_eba36a80___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -89358,38 +89193,38 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/components/TransactionForm.vue"
+component.options.__file = "resources/js/components/Transactions.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/components/TransactionForm.vue?vue&type=script&lang=js&":
-/*!******************************************************************************!*\
-  !*** ./resources/js/components/TransactionForm.vue?vue&type=script&lang=js& ***!
-  \******************************************************************************/
+/***/ "./resources/js/components/Transactions.vue?vue&type=script&lang=js&":
+/*!***************************************************************************!*\
+  !*** ./resources/js/components/Transactions.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TransactionForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./TransactionForm.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/TransactionForm.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TransactionForm_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Transactions_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./Transactions.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Transactions.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Transactions_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/components/TransactionForm.vue?vue&type=template&id=65919027&":
-/*!************************************************************************************!*\
-  !*** ./resources/js/components/TransactionForm.vue?vue&type=template&id=65919027& ***!
-  \************************************************************************************/
+/***/ "./resources/js/components/Transactions.vue?vue&type=template&id=eba36a80&":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/components/Transactions.vue?vue&type=template&id=eba36a80& ***!
+  \*********************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TransactionForm_vue_vue_type_template_id_65919027___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./TransactionForm.vue?vue&type=template&id=65919027& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/TransactionForm.vue?vue&type=template&id=65919027&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TransactionForm_vue_vue_type_template_id_65919027___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Transactions_vue_vue_type_template_id_eba36a80___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./Transactions.vue?vue&type=template&id=eba36a80& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Transactions.vue?vue&type=template&id=eba36a80&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Transactions_vue_vue_type_template_id_eba36a80___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TransactionForm_vue_vue_type_template_id_65919027___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Transactions_vue_vue_type_template_id_eba36a80___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
