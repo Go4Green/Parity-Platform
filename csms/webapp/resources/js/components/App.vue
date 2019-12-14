@@ -16,6 +16,36 @@
             </v-list-item-content>
           </v-list-item>
         </a>
+        <a href="/transactions">
+          <v-list-item link>
+            <v-list-item-action>
+              <v-icon>sync_alt</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>My Transactions</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </a>
+        <a href="/wallet">
+          <v-list-item link>
+            <v-list-item-action>
+              <v-icon>account_balance_wallet</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>My Wallet</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </a>
+        <a href="/charging-stations">
+          <v-list-item link>
+            <v-list-item-action>
+              <v-icon>map</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>Charging Stations</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </a>
         <a href="/settings">
           <v-list-item link>
             <v-list-item-action>
