@@ -7,8 +7,8 @@ from ocpp.v20 import call
 from ocpp.v20 import ChargePoint as cp
 
 GPIO.setmode(GPIO.BCM)
-
-GPIO.setup(16, GPIO.IN, pull_up_down=GPIO.PUD_UP)#Button to GPIO16
+start_button = start_button
+GPIO.setup(start_button, GPIO.IN, pull_up_down=GPIO.PUD_UP)#Button to GPIOstart_button
 
 class ChargePoint(cp):
 
@@ -43,7 +43,7 @@ if __name__ == '__main__':
     print("Press start")
     try:
         while True:
-            button_state = GPIO.input(16)
+            button_state = GPIO.input(start_button)
             if button_state == False:
                 #  GPIO.output(26, True)
                 print('Charging...')
