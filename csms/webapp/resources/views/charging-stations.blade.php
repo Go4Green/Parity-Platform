@@ -9,7 +9,7 @@
       </v-flex>
 
       <v-flex xs12>
-        <dashboard></dashboard>
+        <google-map></google-map>
       </v-flex>
     </v-layout>
   </v-container>

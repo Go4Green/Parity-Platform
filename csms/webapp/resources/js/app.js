@@ -3,8 +3,16 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
+import Vue from 'vue'
 import vuetify from './plugins/vuetify' // path to vuetify export
-require('./bootstrap');
+import * as VueGoogleMaps from "vue2-google-maps";
+
+Vue.use(VueGoogleMaps, {
+  load: {
+    key: "",
+    libraries: "places" // necessary for places input
+  }
+});
 
 window.Vue = require('vue');
 
@@ -21,6 +29,8 @@ window.Vue = require('vue');
 Vue.component('app', require('./components/App.vue').default);
 Vue.component('dashboard', require('./components/Dashboard.vue').default);
 Vue.component('transaction-form', require('./components/TransactionForm.vue').default);
+Vue.component('google-map', require('./components/GoogleMap.vue').default);
+Vue.component('charging-station', require('./components/ChargingStation.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
