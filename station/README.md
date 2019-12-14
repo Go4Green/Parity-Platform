@@ -17,6 +17,9 @@ If you are done working in the virtual environment for the moment, you can deact
 Documentation
 https://ocpp.readthedocs.io/en/latest/index.html
 
+sudo apt-get install python-rpi.gpio python3-rpi.gpio
 
+NFC Libraries
+https://learn.adafruit.com/raspberry-pi-nfc-minecraft-blocks/library-installation
 
 
