@@ -1,20 +1,25 @@
-import asyncio
-import websockets
-import RPi.GPIO as GPIO
+import sys
 import time
+import asyncio
 import requests
+import websockets
 import readmifare
+import RPi.GPIO as GPIO
 
-from datetime import datetime
 from ocpp.v20 import call
+from datetime import datetime
 from ocpp.v20 import ChargePoint as cp
 
+# ---- Setup GPIO ------
 GPIO.setmode(GPIO.BCM)
-start_button = 16
-GPIO.setup(start_button, GPIO.IN, pull_up_down=GPIO.PUD_UP)#Button to GPIOstart_button
 
+# Start Button Definition
+start_button = 16
+GPIO.setup(start_button, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+
+# Stop Button Definition
 stop_button = 26
-GPIO.setup(stop_button, GPIO.IN, pull_up_down=GPIO.PUD_UP)#Button to GPIOstop_button
+GPIO.setup(stop_button, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 class ChargePoint(cp):
 
@@ -32,7 +37,7 @@ class ChargePoint(cp):
             print("Connected to central system.")
             print(request)
             print(response)
-
+        # ============= Stop Charrging button ==================
         try:
             while True:
                 button_state = GPIO.input(stop_button)
@@ -42,10 +47,11 @@ class ChargePoint(cp):
                     now = datetime.now()
                     current_time = now.strftime("%H:%M:%S")
                     print("Stop Time =", current_time)
+                    sys.exit(0)
                     time.sleep(0.2)
         except:
             GPIO.cleanup()
-
+        # =========================================================
 
 async def main():
     url = "http://172.16.176.206:8000/transactions"
@@ -67,14 +73,14 @@ async def main():
 
 
 if __name__ == '__main__':
-    readmifare.read_nfc()
-    print("Press start")
+    readmifare.read_nfc() # Read NFC Card/Tag
+    print("Press start Button ... ")
     try:
         while True:
             button_state = GPIO.input(start_button)
             if button_state == False:
                 #  GPIO.output(26, True)
-                print('Charging...')
+                print('Charging ...')
                 asyncio.run(main())
                 time.sleep(0.2)
     except:
