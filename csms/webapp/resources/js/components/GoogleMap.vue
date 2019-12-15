@@ -1,7 +1,10 @@
 <template>
   <div>
     <div>
-      <h2>Charging Stations</h2>
+      <p>
+        <img src="/img/LOGO_YPEKA_square.gif" alt="" height="50px">
+        <a href="http://mapsportal.ypen.gr/">http://mapsportal.ypen.gr/</a>
+      </p>
       <label>
         <gmap-autocomplete
           @place_changed="setPlace">

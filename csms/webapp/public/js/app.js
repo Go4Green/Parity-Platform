@@ -2293,6 +2293,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "GoogleMap",
   data: function data() {
@@ -38427,7 +38430,7 @@ var render = function() {
     "div",
     [
       _c("div", [
-        _c("h2", [_vm._v("Charging Stations")]),
+        _vm._m(0),
         _vm._v(" "),
         _c(
           "label",
@@ -38467,7 +38470,22 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _c("img", {
+        attrs: { src: "/img/LOGO_YPEKA_square.gif", alt: "", height: "50px" }
+      }),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "http://mapsportal.ypen.gr/" } }, [
+        _vm._v("http://mapsportal.ypen.gr/")
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
