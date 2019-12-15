@@ -18,7 +18,8 @@ class CreateTransactionsTable extends Migration
             $table->bigInteger('user_id');
             $table->bigInteger('charging_station_id');
             $table->datetime('charge_start');
-            $table->datetime('charge_end');
+            $table->datetime('charge_end')->nullable();
+            $table->float('total_charging_cost', 14, 3)->nullable();
             $table->timestamps();
         });
     }

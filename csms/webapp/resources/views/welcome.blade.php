@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
 <title>Parity</title>
 <style>
 :root {
@@ -27,6 +28,7 @@ h1 {
   font-size: 4rem;
   color: #fff;
   position: absolute;
+  font-family: 'Lato', 'Lato', Lato, Lato;
   left: 50%;
   top: 20%;
   transform: translateX(-50%);
@@ -44,6 +46,7 @@ h1 {
   text-align: center;
   color: #fff;
   border: #fff solid 0.2rem;
+  font-family: 'Lato', 'Lato', Lato, Lato;
   font-size: 1rem;
   font-weight: bold;
   text-transform: uppercase;
@@ -77,7 +80,7 @@ h1 {
 
 .split.left {
   left:0;
-  background: url('img/factory.jpg') center center no-repeat;
+  background: url('img/ext.jpg') center center no-repeat;
   background-size: cover;
 }
 
@@ -91,7 +94,7 @@ h1 {
 
 .split.right {
   right:0;
-  background: url('img/wind.jpg') center center no-repeat;
+  background: url('img/station.jpg') center center no-repeat;
   background-size: cover;
 }
 
@@ -182,9 +185,9 @@ ul.topnav li.right {float: right;}
 <body>
 
 <ul class="topnav">
-  <li><a class="active" href="/">Parity Industry 4.0</a></li>
-  <li><a href="/buyers/create">Consumer</a></li>
-  <li><a href="/producers/create">Producer</a></li>
+  <li><a class="active" href="/">Parity Loader</a></li>
+  <li><a href="/drivers/create">Drivers</a></li>
+  <li><a href="/stations/create">EV Station Owners</a></li>
   <li class="right"><a href="/register">Register</a></li>
   <li class="right"><a href="/login">Login</a></li>
 </ul>
@@ -192,11 +195,11 @@ ul.topnav li.right {float: right;}
 
 <div class="container">
   <div class="split left">
-    <h1>Demand Centers</h1>
+    <h1>EV Drivers</h1>
     <a href="/register" class="button">Register</a>
   </div>
   <div class="split right">
-    <h1>Energy Producers</h1>
+    <h1>Station Owners</h1>
     <a href="/register" class="button">Register</a>
   </div>
 </div>

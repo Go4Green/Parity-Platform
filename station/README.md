@@ -22,4 +22,10 @@ sudo apt-get install python-rpi.gpio python3-rpi.gpio
 NFC Libraries
 https://learn.adafruit.com/raspberry-pi-nfc-minecraft-blocks/library-installation
 
+Run Central System
+>$ python3 Central_System.py
+
+Run Charge Point (In a new tab)
+>$ python3 Charge_Point.py
+
 

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateWalletsTable extends Migration
+class CreateKwhCostsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateWalletsTable extends Migration
      */
     public function up()
     {
-        Schema::create('wallets', function (Blueprint $table) {
+        Schema::create('kwh_costs', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('user_id');
-            $table->float('balance', 14, 3)->nullable();
-            $table->enum('currency', ['EUR', 'USD', 'GBP'])->default('EUR');
+            $table->float('demand', 14, 3);
+            $table->float('res_capacity', 14, 3);
+            $table->float('cost', 14, 3);
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateWalletsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('wallets');
+        Schema::dropIfExists('kwh_costs');
     }
 }

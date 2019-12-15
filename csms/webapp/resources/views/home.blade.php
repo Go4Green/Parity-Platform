@@ -9,7 +9,11 @@
       </v-flex>
 
       <v-flex xs12>
-        <dashboard></dashboard>
+        <dashboard 
+          :demand="{{ $demand }}"
+          :res-capacity="{{ $resCapacity }}"
+          :kwh-cost="{{ $kwhCost }}"
+        ></dashboard>
       </v-flex>
     </v-layout>
   </v-container>
