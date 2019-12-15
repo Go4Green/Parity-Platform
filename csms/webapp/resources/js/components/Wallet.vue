@@ -1,34 +1,36 @@
 <template>
   <v-container>
 		<v-row>
-			<v-flex xs3>
+			<v-col cols="6">
 				<v-card color="primary">
 					<v-card-text>
 						<p class="display-1 text--primary">
-							300 EUR
+							{{ walletData.balance }} {{ walletData.currency }}
 						</p>
 						<p>Balance</p>
 					</v-card-text>
 				</v-card>
-			</v-flex>
-		</v-row>
-		<v-row mt-4>
-			<v-flex xs6>
+			</v-col>
+			<v-col cols="6">
 				<v-card mt-4>
 					<v-card-text>
 						<p class="display-1 text--primary">
-							Add new card
+							Update Wallet
 						</p>
+						<v-btn>Buy Credits</v-btn>
+						<v-btn>Add new Card</v-btn>
 					</v-card-text>
 				</v-card>
-			</v-flex>
+			</v-col>
 		</v-row>
   </v-container>
 </template>
 
 <script>
 export default {
-
+	props: {
+		walletData: Object
+	}
 }
 </script>
 

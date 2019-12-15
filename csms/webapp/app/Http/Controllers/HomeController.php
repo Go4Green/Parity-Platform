@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\KwhCost;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $latestKwhCost = KwhCost::latest()->first();
+        
+        $demand = $latestKwhCost->demand;
+        $resCapacity = $latestKwhCost->res_capacity;
+        $kwhCost = $latestKwhCost->cost;
+
+        return view('home', [
+            'demand' => $demand,
+            'resCapacity' => $resCapacity,
+            'kwhCost' => $kwhCost
+        ]);
     }
 }

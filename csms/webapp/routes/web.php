@@ -24,3 +24,5 @@ Route::resource('wallet', 'WalletController');
 Route::resource('transactions', 'TransactionController');
 
 Route::resource('charging-stations', 'ChargingStationController');
+
+Route::resource('kwh-costs', 'KwhCostController');

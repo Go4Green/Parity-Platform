@@ -9,7 +9,7 @@
       </v-flex>
 
       <v-flex xs12>
-        <wallet></wallet>
+        <wallet :wallet-data="{{ Auth::user()->wallet }}"></wallet>
       </v-flex>
     </v-layout>
   </v-container>
