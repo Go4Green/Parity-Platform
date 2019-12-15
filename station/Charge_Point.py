@@ -3,6 +3,7 @@ import websockets
 import RPi.GPIO as GPIO
 import time
 import requests
+import readmifare
 
 from datetime import datetime
 from ocpp.v20 import call
@@ -54,7 +55,7 @@ async def main():
     }
     response = requests.request("POST", url, data=payload, headers=headers)
     print(response.text)
-    
+
     async with websockets.connect(
         'ws://localhost:9000/CP_1',
          subprotocols=['ocpp2.0']
@@ -66,6 +67,7 @@ async def main():
 
 
 if __name__ == '__main__':
+    readmifare.read_nfc()
     print("Press start")
     try:
         while True:
