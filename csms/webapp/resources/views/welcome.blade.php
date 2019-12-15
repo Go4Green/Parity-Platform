@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
 <title>Parity</title>
 <style>
 :root {
@@ -79,7 +80,7 @@ h1 {
 
 .split.left {
   left:0;
-  background: url('img/factory.jpg') center center no-repeat;
+  background: url('img/ext.jpg') center center no-repeat;
   background-size: cover;
 }
 
@@ -93,7 +94,7 @@ h1 {
 
 .split.right {
   right:0;
-  background: url('img/wind.jpg') center center no-repeat;
+  background: url('img/station.jpg') center center no-repeat;
   background-size: cover;
 }
 
@@ -194,11 +195,11 @@ ul.topnav li.right {float: right;}
 
 <div class="container">
   <div class="split left">
-    <h1>Demand Centers</h1>
+    <h1>EV Drivers</h1>
     <a href="/register" class="button">Register</a>
   </div>
   <div class="split right">
-    <h1>Energy Producers</h1>
+    <h1>Station Owners</h1>
     <a href="/register" class="button">Register</a>
   </div>
 </div>
