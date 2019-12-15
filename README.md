@@ -26,6 +26,10 @@ Create a new database in MySQL and copy the name in the `.env` file. Make sure t
 ```
 php artisan migrate
 ```
+to create the database tables. Then run `php artisan db:seed` to load some dummy data and then serve the application by running
+```
+php artisan serve
+```
 
 ## Open source technologies
 
