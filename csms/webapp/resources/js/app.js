@@ -32,6 +32,7 @@ Vue.component('transactions', require('./components/Transactions.vue').default);
 Vue.component('google-map', require('./components/GoogleMap.vue').default);
 Vue.component('charging-station', require('./components/ChargingStation.vue').default);
 Vue.component('wallet', require('./components/Wallet.vue').default);
+Vue.component('charging-cost', require('./components/ChargingCost.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
