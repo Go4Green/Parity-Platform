@@ -50,7 +50,7 @@ class ChargePoint(cp):
             while True:
                 button_state = GPIO.input(stop_button)
                 if button_state == False:
-                    GPIO.output(stop_led, True) # Turn on Start LED
+                    GPIO.output(stop_led, True) # Turn on Stop LED
                     GPIO.output(start_led, False) # Turn off Start LED
                     print('Stoped Charging..')
                     now = datetime.now()
@@ -90,7 +90,7 @@ if __name__ == '__main__':
         while True:
             button_state = GPIO.input(start_button)
             if button_state == False:
-                GPIO.output(start_led, True)
+                GPIO.output(start_led, True) # Turn on Start LED
                 print('Charging ...')
                 asyncio.run(main())
                 time.sleep(0.2)
