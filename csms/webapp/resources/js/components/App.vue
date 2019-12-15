@@ -100,3 +100,10 @@
     },
   }
 </script>
+
+<style scoped>
+a:hover {
+  text-decoration: none;
+  color: #F18D0F;
+}
+</style>
