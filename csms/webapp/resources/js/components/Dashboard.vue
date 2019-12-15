@@ -59,42 +59,57 @@
 			</v-col>
 
 			<v-col cols="6">
-				<v-card>
-					<v-card-text>
-						<p class="display-1 text--primary">
-							Charging Cost
-						</p>
-						<v-row>
-							<v-col cols="12">
-								<v-text-field
-									label="Charging Time (minutes)"
-									v-model="chargeTime"
-									outlined
-								></v-text-field>
-							</v-col>
-						</v-row>
-						<v-row>
-							<v-col cols="12">
-								<v-text-field
-									label="kWh"
-									outlined
-									readonly
-									v-model="kWh"
-								></v-text-field>
-							</v-col>
-						</v-row>
-						<v-row>
-							<v-col cols="12">
-								<v-text-field
-									label="Total Charging Cost (in Credits)"
-									outlined
-									readonly
-									v-model="chargeCost"
-								></v-text-field>
-							</v-col>
-						</v-row>
-					</v-card-text>
-				</v-card>
+				<v-row>
+					<v-col cols="12">
+						<v-card :color="notificationColor">
+							<v-card-text>
+								<p class="display-1 text--primary">
+									{{ chargingNotification }}
+								</p>
+							</v-card-text>
+						</v-card>
+					</v-col>
+				</v-row>
+				<v-row>
+					<v-col cols="12">
+						<v-card>
+							<v-card-text>
+								<p class="display-1 text--primary">
+									Charging Cost
+								</p>
+								<v-row>
+									<v-col cols="12">
+										<v-text-field
+											label="Charging Time (minutes)"
+											v-model="chargeTime"
+											outlined
+										></v-text-field>
+									</v-col>
+								</v-row>
+								<v-row>
+									<v-col cols="12">
+										<v-text-field
+											label="kWh"
+											outlined
+											readonly
+											v-model="kWh"
+										></v-text-field>
+									</v-col>
+								</v-row>
+								<v-row>
+									<v-col cols="12">
+										<v-text-field
+											label="Total Charging Cost (in Credits)"
+											outlined
+											readonly
+											v-model="chargeCost"
+										></v-text-field>
+									</v-col>
+								</v-row>
+							</v-card-text>
+						</v-card>
+					</v-col>
+				</v-row>
 			</v-col>
 		</v-row>
 
@@ -124,13 +139,14 @@ export default {
 		kwhCost: Number
 	},
 
-  data() {
-    return {
+  	data() {
+    	return {
 			tokenData: tokenChartData,
 			chargeTime: null,
 			newResCapacity: null,
-			newDemand: null
-    }
+			newDemand: null,
+			notificationColor: ""
+    	}
 	},
 	
 	computed: {
@@ -144,6 +160,16 @@ export default {
 
 		chargeCost: function() {
 			return Math.round((this.kWh * this.kWhCost) * 100) / 100;
+		},
+
+		chargingNotification: function() {
+			if (this.kwhCost <= 0.6) {
+				this.notificationColor = "green";
+				return "Το κόστος φόρτισης είναι φθηνότερο για την επόμενη ώρα."
+			} else {
+				this.notificationColor = "red";
+				return "Το κόστος φόρτισης είναι ακριβότερο για την επόμενη ώρα."
+			}
 		}
 	},
 

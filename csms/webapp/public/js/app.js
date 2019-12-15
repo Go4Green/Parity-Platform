@@ -2173,6 +2173,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2187,7 +2202,8 @@ __webpack_require__.r(__webpack_exports__);
       tokenData: _token_data_js__WEBPACK_IMPORTED_MODULE_1__["default"],
       chargeTime: null,
       newResCapacity: null,
-      newDemand: null
+      newDemand: null,
+      notificationColor: ""
     };
   },
   computed: {
@@ -2199,6 +2215,15 @@ __webpack_require__.r(__webpack_exports__);
     },
     chargeCost: function chargeCost() {
       return Math.round(this.kWh * this.kWhCost * 100) / 100;
+    },
+    chargingNotification: function chargingNotification() {
+      if (this.kwhCost <= 0.6) {
+        this.notificationColor = "green";
+        return "Το κόστος φόρτισης είναι φθηνότερο για την επόμενη ώρα.";
+      } else {
+        this.notificationColor = "red";
+        return "Το κόστος φόρτισης είναι ακριβότερο για την επόμενη ώρα.";
+      }
     }
   },
   mounted: function mounted() {
@@ -38189,91 +38214,145 @@ var render = function() {
             { attrs: { cols: "6" } },
             [
               _c(
-                "v-card",
+                "v-row",
                 [
                   _c(
-                    "v-card-text",
+                    "v-col",
+                    { attrs: { cols: "12" } },
                     [
-                      _c("p", { staticClass: "display-1 text--primary" }, [
-                        _vm._v("\n\t\t\t\t\t\t\tCharging Cost\n\t\t\t\t\t\t")
-                      ]),
-                      _vm._v(" "),
                       _c(
-                        "v-row",
+                        "v-card",
+                        { attrs: { color: _vm.notificationColor } },
                         [
-                          _c(
-                            "v-col",
-                            { attrs: { cols: "12" } },
-                            [
-                              _c("v-text-field", {
-                                attrs: {
-                                  label: "Charging Time (minutes)",
-                                  outlined: ""
-                                },
-                                model: {
-                                  value: _vm.chargeTime,
-                                  callback: function($$v) {
-                                    _vm.chargeTime = $$v
-                                  },
-                                  expression: "chargeTime"
-                                }
-                              })
-                            ],
-                            1
-                          )
+                          _c("v-card-text", [
+                            _c(
+                              "p",
+                              { staticClass: "display-1 text--primary" },
+                              [
+                                _vm._v(
+                                  "\n\t\t\t\t\t\t\t\t\t" +
+                                    _vm._s(_vm.chargingNotification) +
+                                    "\n\t\t\t\t\t\t\t\t"
+                                )
+                              ]
+                            )
+                          ])
                         ],
                         1
-                      ),
-                      _vm._v(" "),
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-row",
+                [
+                  _c(
+                    "v-col",
+                    { attrs: { cols: "12" } },
+                    [
                       _c(
-                        "v-row",
+                        "v-card",
                         [
                           _c(
-                            "v-col",
-                            { attrs: { cols: "12" } },
+                            "v-card-text",
                             [
-                              _c("v-text-field", {
-                                attrs: {
-                                  label: "kWh",
-                                  outlined: "",
-                                  readonly: ""
-                                },
-                                model: {
-                                  value: _vm.kWh,
-                                  callback: function($$v) {
-                                    _vm.kWh = $$v
-                                  },
-                                  expression: "kWh"
-                                }
-                              })
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-row",
-                        [
-                          _c(
-                            "v-col",
-                            { attrs: { cols: "12" } },
-                            [
-                              _c("v-text-field", {
-                                attrs: {
-                                  label: "Total Charging Cost (in Credits)",
-                                  outlined: "",
-                                  readonly: ""
-                                },
-                                model: {
-                                  value: _vm.chargeCost,
-                                  callback: function($$v) {
-                                    _vm.chargeCost = $$v
-                                  },
-                                  expression: "chargeCost"
-                                }
-                              })
+                              _c(
+                                "p",
+                                { staticClass: "display-1 text--primary" },
+                                [
+                                  _vm._v(
+                                    "\n\t\t\t\t\t\t\t\t\tCharging Cost\n\t\t\t\t\t\t\t\t"
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-row",
+                                [
+                                  _c(
+                                    "v-col",
+                                    { attrs: { cols: "12" } },
+                                    [
+                                      _c("v-text-field", {
+                                        attrs: {
+                                          label: "Charging Time (minutes)",
+                                          outlined: ""
+                                        },
+                                        model: {
+                                          value: _vm.chargeTime,
+                                          callback: function($$v) {
+                                            _vm.chargeTime = $$v
+                                          },
+                                          expression: "chargeTime"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-row",
+                                [
+                                  _c(
+                                    "v-col",
+                                    { attrs: { cols: "12" } },
+                                    [
+                                      _c("v-text-field", {
+                                        attrs: {
+                                          label: "kWh",
+                                          outlined: "",
+                                          readonly: ""
+                                        },
+                                        model: {
+                                          value: _vm.kWh,
+                                          callback: function($$v) {
+                                            _vm.kWh = $$v
+                                          },
+                                          expression: "kWh"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-row",
+                                [
+                                  _c(
+                                    "v-col",
+                                    { attrs: { cols: "12" } },
+                                    [
+                                      _c("v-text-field", {
+                                        attrs: {
+                                          label:
+                                            "Total Charging Cost (in Credits)",
+                                          outlined: "",
+                                          readonly: ""
+                                        },
+                                        model: {
+                                          value: _vm.chargeCost,
+                                          callback: function($$v) {
+                                            _vm.chargeCost = $$v
+                                          },
+                                          expression: "chargeCost"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
                             ],
                             1
                           )
