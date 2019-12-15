@@ -1,5 +1,6 @@
 import sys
 import time
+import json
 import asyncio
 import requests
 import websockets
@@ -56,6 +57,20 @@ class ChargePoint(cp):
                     now = datetime.now()
                     current_time = now.strftime("%H:%M:%S")
                     print("Stop Time =", current_time)
+                     # Send stop charging request
+                    url = "http://172.16.176.206:8000/transactions"
+                    payload = {
+                        'charging_station_id': 1,
+                        'charging_status': "stop_charging",
+                        'card_id': "415fab89",
+                    }
+                    payload_json = json.dumps(payload)
+                    headers = {
+                        'Content-Type': "application/json"
+                    }
+                    response = requests.request("POST", url, data=payload_json, headers=headers)
+                    print(response.text) 
+                    # --------------------------
                     # sys.exit(0)
                     time.sleep(0.2)
         except:
@@ -64,11 +79,16 @@ class ChargePoint(cp):
 
 async def main():
     url = "http://172.16.176.206:8000/transactions"
-    payload = "{\n\t\"charging_station_id\": 1\n}"
-    headers = {
-        'Content-Type': "application/json"
+    payload = {
+       'charging_station_id': 1,
+       'charging_status': "start_charging",
+       'card_id': "415fab89",
     }
-    response = requests.request("POST", url, data=payload, headers=headers)
+    payload_json = json.dumps(payload)
+    headers = {
+        'Content-Type': "application/json",
+    }
+    response = requests.request("POST", url, data=payload_json, headers=headers)
     print(response.text)
 
     async with websockets.connect(
