@@ -80,7 +80,7 @@ h1 {
 
 .split.left {
   left:0;
-  background: url('img/factory.jpg') center center no-repeat;
+  background: url('img/ext.jpg') center center no-repeat;
   background-size: cover;
 }
 
@@ -94,7 +94,7 @@ h1 {
 
 .split.right {
   right:0;
-  background: url('img/wind.jpg') center center no-repeat;
+  background: url('img/station.jpg') center center no-repeat;
   background-size: cover;
 }
 
