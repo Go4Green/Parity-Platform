@@ -17,6 +17,10 @@ GPIO.setmode(GPIO.BCM)
 start_button = 16
 GPIO.setup(start_button, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
+# Start Green LED
+start_led = 19
+GPIO.setup(start_led, GPIO.OUT)
+
 # Stop Button Definition
 stop_button = 26
 GPIO.setup(stop_button, GPIO.IN, pull_up_down=GPIO.PUD_UP)
@@ -79,7 +83,7 @@ if __name__ == '__main__':
         while True:
             button_state = GPIO.input(start_button)
             if button_state == False:
-                #  GPIO.output(26, True)
+                GPIO.output(start_led, True)
                 print('Charging ...')
                 asyncio.run(main())
                 time.sleep(0.2)
