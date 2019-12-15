@@ -2365,8 +2365,13 @@ __webpack_require__.r(__webpack_exports__);
       }, {
         text: 'Charge Start',
         value: 'charge_start'
-      } // { text: 'Charge End', value: 'charge_end' }
-      ]
+      }, {
+        text: 'Charge End',
+        value: 'charge_end'
+      }, {
+        text: 'Total Cost (in Credits)',
+        value: 'total_charging_cost'
+      }]
     };
   }
 });
@@ -38484,9 +38489,7 @@ var render = function() {
                       _vm._v(
                         "\n\t\t\t\t\t\t\t" +
                           _vm._s(_vm.walletData.balance) +
-                          " " +
-                          _vm._s(_vm.walletData.currency) +
-                          "\n\t\t\t\t\t\t"
+                          " Credits\n\t\t\t\t\t\t"
                       )
                     ]),
                     _vm._v(" "),

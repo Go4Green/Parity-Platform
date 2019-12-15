@@ -5,7 +5,7 @@
 				<v-card color="primary">
 					<v-card-text>
 						<p class="display-1 text--primary">
-							{{ walletData.balance }} {{ walletData.currency }}
+							{{ walletData.balance }} Credits
 						</p>
 						<p>Balance</p>
 					</v-card-text>
