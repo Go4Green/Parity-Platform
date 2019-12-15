@@ -195,11 +195,11 @@ ul.topnav li.right {float: right;}
 
 <div class="container">
   <div class="split left">
-    <h1>Demand Centers</h1>
+    <h1>EV Drivers</h1>
     <a href="/register" class="button">Register</a>
   </div>
   <div class="split right">
-    <h1>Energy Producers</h1>
+    <h1>Station Owners</h1>
     <a href="/register" class="button">Register</a>
   </div>
 </div>
