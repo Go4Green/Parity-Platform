@@ -25,6 +25,10 @@ GPIO.setup(start_led, GPIO.OUT)
 stop_button = 26
 GPIO.setup(stop_button, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
+# stop Green LED
+stop_led = 13
+GPIO.setup(stop_led, GPIO.OUT)
+
 class ChargePoint(cp):
 
     async def send_boot_notification(self):
@@ -46,12 +50,13 @@ class ChargePoint(cp):
             while True:
                 button_state = GPIO.input(stop_button)
                 if button_state == False:
-                    # GPIO.output(26, True)
+                    GPIO.output(stop_led, True) # Turn on Start LED
+                    GPIO.output(start_led, False) # Turn off Start LED
                     print('Stoped Charging..')
                     now = datetime.now()
                     current_time = now.strftime("%H:%M:%S")
                     print("Stop Time =", current_time)
-                    sys.exit(0)
+                    # sys.exit(0)
                     time.sleep(0.2)
         except:
             GPIO.cleanup()
@@ -77,6 +82,8 @@ async def main():
 
 
 if __name__ == '__main__':
+    GPIO.output(start_led, False) # Turn off Start LED
+    GPIO.output(stop_led, False) # Turn off Stop LED
     readmifare.read_nfc() # Read NFC Card/Tag
     print("Press start Button ... ")
     try:
@@ -87,6 +94,7 @@ if __name__ == '__main__':
                 print('Charging ...')
                 asyncio.run(main())
                 time.sleep(0.2)
+                GPIO.output(start_led, False)
     except:
         GPIO.cleanup()
 
