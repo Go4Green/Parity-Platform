@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
 <title>Parity</title>
 <style>
 :root {
