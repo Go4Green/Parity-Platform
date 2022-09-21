@@ -32,6 +32,6 @@
         "chart.js": "^2.9.3",
         "vue-chartjs": "^3.5.0",
         "vue2-google-maps": "^0.10.7",
-        "vuetify": "^2.1.14"
+        "vuetify": "^2.6.10"
     }
 }
